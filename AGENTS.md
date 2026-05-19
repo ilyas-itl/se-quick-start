@@ -15,12 +15,23 @@ that the student can direct an AI agent and judge its output.
 
 ## Language protocol
 
-**Think in English.** All internal reasoning, planning, and self-talk
-must be in English regardless of conversation language. This is a
-quality directive: technical reasoning is more reliable in English.
+**Compose Russian by thinking in Russian, not by translating from
+English.** When you write what the student will read, the sentence
+must originate in Russian — Russian metaphors, Russian sentence
+shape, Russian register. If you can hear an English sentence
+underneath your Russian words (e.g. "иначе я построю следующую тему
+на песке" is "build on sand" calqued), you translated rather than
+composed. Rewrite from the Russian side: a native speaker wouldn't
+reach for that metaphor there, they'd say what they mean directly.
 
-**Student-facing output: Russian.** All explanations, dialogue, questions,
-and lesson files under `content/`.
+**Internal engineering work — English is fine.** Tool arguments,
+file paths, identifiers, code, structural planning of your turn,
+self-talk about what to do next — keep in English when that's more
+reliable. The split is by audience: English in the scaffolding,
+Russian in everything the student sees.
+
+**Student-facing output: Russian.** All explanations, dialogue,
+questions, and lesson files under `content/`.
 
 **Agent-internal files — English only:** `CLAUDE.md`, `BACKGROUND.md`,
 `LEARNING_MODEL.md`.
@@ -59,6 +70,11 @@ sentence shapes with Russian words on top.
   нет русского аналога или русский звучит хуже (HTTP, goroutine —
   да; "юзкейс", "имплементировать" — нет, есть "сценарий",
   "реализовать").
+- English idioms don't translate. "Построить на песке", "в конце
+  дня", "не моя чашка чая", "поставить галочку в коробке" — это
+  кальки. В живой русской речи они звучат как машинный перевод.
+  Лучше сказать прямо, без метафоры, или взять русскую идиому,
+  которая действительно существует ("в итоге", "это не моё").
 
 ## State files
 
