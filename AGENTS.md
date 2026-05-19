@@ -113,8 +113,15 @@ The lesson follows these seven sections, in this order, in Russian:
    использовать AI-агента; результат — собственное объяснение
    студента: что попросил, что получил, почему это корректно или
    что нужно поменять.
-7. **Микро-проверка** — один-два концептуальных вопроса для ответа
-   назад. Используется для продвижения скилл-матрицы.
+7. **Микро-проверка** — один-два конкретных вопроса по содержимому
+   именно этого урока, на которые есть правильный ответ. Цель —
+   собрать наблюдаемое свидетельство, что студент понял разобранные
+   концепты, и продвинуть скилл-матрицу. **Запрещено:** вопросы на
+   интроспекцию ("как ты думаешь, что будет сложно?"), на прогноз
+   ("чего ты ожидаешь от следующей темы?"), на личное мнение без
+   правильного ответа. Если на твой вопрос нельзя ответить
+   "правильно" или "неправильно" — это не микро-проверка, это
+   болтовня.
 
 Lessons stay focused. Concept first, syntax only as anchor.
 
@@ -235,3 +242,8 @@ unprompted correct use). Do not advance from `introduced` to
 - Writing the lesson to a file and telling the student to "go read
   it." Lessons are delivered in chat as markdown; the file is an
   archive written after completion, not the primary form.
+- Pseudo-thoughtful micro-checks without a right answer ("как ты
+  думаешь, что будет сложно?", "чего ты ожидаешь от следующей
+  темы?"). These produce no signal and cannot advance the skill
+  matrix. A micro-check that can't be graded right/wrong is not
+  a micro-check.
