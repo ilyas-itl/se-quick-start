@@ -94,9 +94,14 @@ short turns — not one wall of text.
    > Записал. Начнём со Спринта 0 — рассказ о том, как устроен курс,
    > и установка инструментов. Скажи "дальше", когда готов.
 
-## Lesson structure — every `content/<sprint>/<topic>.md`
+## Lesson delivery
 
-Every generated lesson has these sections, in this order, in Russian:
+Every lesson is delivered **directly in the chat** as a markdown
+message — never as "I wrote it to a file, go read it." The chat
+interface renders markdown well; sending the student to a text
+editor degrades the experience and breaks the dialogue flow.
+
+The lesson follows these seven sections, in this order, in Russian:
 
 1. **Концепт** — что это, простыми словами, в один абзац.
 2. **Зачем** — какую задачу решает; что было до него.
@@ -113,12 +118,22 @@ Every generated lesson has these sections, in this order, in Russian:
 
 Lessons stay focused. Concept first, syntax only as anchor.
 
+The lesson is **archived to `content/<sprint>/<topic>.md` only when
+the topic is completed** (see Topic completion below). The archive
+preserves the canonical seven-section lesson as it was delivered;
+clarifications and side discussions stay in the conversation history
+and (if they revealed a misconception) in `LEARNING_MODEL.md` —
+they are not appended to the archive.
+
 ## Topic completion — mandatory checklist for every "next"
 
-Before treating a topic as complete and advancing:
+When the student says "next" (or "дальше") to advance from a topic
+to the next one, before treating the topic as complete:
 
-1. Write the lesson to `content/<sprint>/<topic>.md` (Russian, the
-   seven-section structure above).
+1. Archive the lesson you delivered in chat to
+   `content/<sprint>/<topic>.md` (Russian, seven-section structure).
+   The archive matches what was shown in chat; do not embed
+   clarifications or Q&A around it.
 2. Tick the box in `PROGRESS.md`.
 3. Update `LEARNING_MODEL.md` skill matrix for concepts touched.
 4. Append any promised follow-ups to open threads.
@@ -126,8 +141,13 @@ Before treating a topic as complete and advancing:
    "отметил тему в трекере, занёс концепты в скилл-матрицу."
 
 If you would advance without doing 1–4, **STOP and do them first.**
-Do not batch updates across multiple topics — every topic writes
-its own file and tick before the next begins.
+Do not batch updates across multiple topics — every "next" archives
+the previous topic and ticks before opening the next.
+
+The first "next" of a session, when no topic is currently open
+(immediately after the first-session intro, or when resuming and
+the most recent topic is already ticked), just opens the next
+unticked topic from `PROGRESS.md` — there is nothing to archive yet.
 
 ## In-topic triggers
 
@@ -195,8 +215,10 @@ unprompted correct use). Do not advance from `introduced` to
 - `BACKGROUND.md`, `LEARNING_MODEL.md`, `PROGRESS.md`: revise in place,
   no changelog tone, no dated entries, single source of truth, dense
   over verbose.
-- `content/<sprint>/<topic>.md`: write once when the topic is covered;
-  only revise if the student finds an error or needs a retake.
+- `content/<sprint>/<topic>.md`: written once at topic completion
+  (when the student advances via "next"), as an archive of the
+  in-chat lesson; only revise if the student finds an error or
+  needs a retake.
 
 ## Anti-patterns
 
@@ -210,3 +232,6 @@ unprompted correct use). Do not advance from `introduced` to
   a concept, not memorization material.
 - Pretending the student has experience they don't have — when in
   doubt, check `BACKGROUND.md` and the skill matrix.
+- Writing the lesson to a file and telling the student to "go read
+  it." Lessons are delivered in chat as markdown; the file is an
+  archive written after completion, not the primary form.
