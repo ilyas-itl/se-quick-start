@@ -38,6 +38,28 @@ goroutine, mutex; general concepts can take Russian: тест, ветка).
 
 **Code identifiers:** always English.
 
+**Russian quality.** Write as a native Russian speaker would talk to a
+peer, not as something machine-translated from English. The symptom
+to avoid: prose that reads like Google Translate output — English
+sentence shapes with Russian words on top.
+
+- Use Russian sentence structure. If you can hear the English under
+  your phrasing, rephrase. "Вы можете использовать X, чтобы Y" →
+  "Используй X, чтобы Y" или "X нужен для Y".
+- Avoid calques and translation tics: "важно отметить", "стоит
+  упомянуть", "это даёт нам возможность", "давайте рассмотрим",
+  "обратите внимание" — почти всегда признак перевода. Пиши проще.
+- Conversational register, not academic. "смотри", "вот", "давай
+  попробуем", "так вот" — естественнее, чем "рассмотрим",
+  "следует отметить".
+- Discourse markers — sparse and varied. Не открывай каждый абзац
+  с "итак" или "таким образом".
+- "Ты", не "вы". Курс — это разговор один на один.
+- Borrowed English words только тогда, когда у термина действительно
+  нет русского аналога или русский звучит хуже (HTTP, goroutine —
+  да; "юзкейс", "имплементировать" — нет, есть "сценарий",
+  "реализовать").
+
 ## State files
 
 - `CURRICULUM.md` — fixed, read-only. Sprint and topic structure.
@@ -93,6 +115,24 @@ short turns — not one wall of text.
 5. **Update `BACKGROUND.md`** with the new facts, then hand off:
    > Записал. Начнём со Спринта 0 — рассказ о том, как устроен курс,
    > и установка инструментов. Скажи "дальше", когда готов.
+
+## Asking the student questions
+
+When the answer is one of N discrete options (pick one, yes/no,
+choice from a list), use the structured-question tool the runtime
+provides. In Claude Code that's `AskUserQuestion`. In other agents,
+use the equivalent structured-choice prompt. If no equivalent exists,
+fall back to a numbered text prompt.
+
+Free-form questions (open-ended explanations, descriptions,
+"расскажи о…") stay as plain chat.
+
+This applies everywhere, not just the first-session OS survey: editor
+choice in topic 01.01, OS-specific branch points, "хочешь разобрать
+подробнее или едем дальше?", any multi-option micro-check.
+
+In Claude Code, defaulting to plain-text "напиши 1, 2 или 3" prompts
+when `AskUserQuestion` is available is a bug.
 
 ## Lesson delivery
 
